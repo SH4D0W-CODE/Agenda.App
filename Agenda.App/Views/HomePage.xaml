@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.App.Views.HomePage"
+             Title="AGENDA">
+    
+    <ContentPage.Content>
+        <StackLayout Background="#3D3D3D">
+            <ListView x:Name="lista_tareas"
+                HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem x:Name="BtnDelete"
+                                          Text="Eliminar"
+                                          IsDestructive="True"
+                                          Clicked="BtnDelete_Clicked"
+                                          CommandParameter="{Binding .}">
+                                    
+                                </MenuItem>
+                            </ViewCell.ContextActions>
+                            <StackLayout Padding="15, 0">
+                                <Label Text="{Binding Name}"
+                                       TextColor="{StaticResource colorPrimary}"
+                                       FontSize="Medium"/>
+                                <Label Text="{Binding Lastname}"
+                                       TextColor="Silver"/>
+                                <Label Text="{Binding Dni}"
+                                       TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Agregar Registro"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Margin="10"
+                    Clicked="ToolbarItem_Clicked">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF8000" Offset="0.0" />
+                        <GradientStop Color="#B500FE" Offset="1.0" />
+                    </LinearGradientBrush>
+
+                </Button.Background>
+
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

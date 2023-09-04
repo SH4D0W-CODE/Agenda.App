@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.App.Views.AddPage"
+             Title="AGREGAR TAREA">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="15"
+                     BackgroundColor="#3D3D3D">
+            <Label Text="Nombre"
+                   TextColor="{StaticResource colorPrimary}"
+                   FontSize="Medium"/>
+            <Entry x:Name="nombre"
+                   HeightRequest="50"
+                   TextColor="Silver"/>
+            <Label Text="Apellido"
+                   TextColor="{StaticResource colorPrimary}"
+                   FontSize="Medium"/>
+            <Entry x:Name="apellido"
+                    HeightRequest="50"
+                    TextColor="Silver"/>
+            <Label Text="DNI"
+                   TextColor="{StaticResource colorPrimary}"
+                   FontSize="Medium"/>
+            <Entry x:Name="dni"
+                   Keyboard="Numeric"
+                   MaxLength="8"
+                   TextColor="Silver"/>
+
+            <Button Text="Agregar Registro"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Margin="10"
+                    Clicked="BtnGuardar_Clicked">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF8000" Offset="0.0" />
+                        <GradientStop Color="#B500FE" Offset="1.0" />
+                    </LinearGradientBrush>
+
+                </Button.Background>
+
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
